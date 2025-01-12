@@ -1,0 +1,855 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="encanto.min.css">
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merienda&display=swap" rel="stylesheet">
+
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <link rel="icon" href="img/smalllogo.png">
+    <title>B&C Website | Encanto</title>
+
+    <style>
+      body{
+        background-color: #dad7cd;
+        overflow-x:hidden;  
+      }
+      .navbar-fixed{
+        font-family: 'Gochi Hand', cursive;
+      }
+      .navbar-fixed .nav-wrapper{
+        background: linear-gradient(109.6deg, rgb(255, 194, 48) 11.2%, rgb(255, 124, 0) 100.2%);
+      }
+      .nav-wrapper img{
+        padding-top: 15px;
+        padding-bottom: 15px;
+        height: 60px;
+      }
+      .sidenav{
+        background: hsl(0 0% 100% / 0.8);
+        font-family: 'Gochi Hand', cursive;
+      }
+      .sidenav img{
+        width: 230px;
+        height: 160px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+      }
+      .sidenav .container img{
+        padding-top: 200px;
+        height: 46%;
+        width: 35%;
+      }
+      .sidenav li a:hover{
+        background-color: #ff9f1c;
+        color: white;
+      }
+      .slider b{
+        font-family: 'Merienda', cursive;
+        font-size: 80px;
+        line-height: 100px;
+      }
+      .slider h5, .slider a{
+        font-family: 'Gochi Hand', cursive;
+      }
+      .slider .slides .caption .waves-effect{
+        border-radius: 30px;
+      }
+      .slider .img{
+        background-size: cover;
+        background-position: center;
+        min-height: 500px;
+      }
+      @media screen and (max-width: 700px){
+        .slider b{
+          font-size: 60px;
+        }
+      }
+      @media screen and (max-width: 670px){
+        .slider .img{
+          min-height: 500px;
+        }
+      }
+      .slider .btn-large{
+        margin-top: 20px;
+        padding: 0 50px;
+        border-radius: 1%;
+        background: linear-gradient(109.6deg, rgb(255, 194, 48) 11.2%, rgb(255, 124, 0) 100.2%);
+      }
+      .container .row{
+        padding-top: 100px;
+        padding-bottom: 100px;
+      }
+      .row p{
+        font-size: 18px;
+      }
+      .tab a{
+        font-family: 'Gochi Hand', cursive;
+        letter-spacing: 2px;
+      }
+      .tabs .indicator{
+        background-color: #ff9f1c;
+      }
+      .tabs .tab a:focus.active{
+        background: transparent;
+      }
+      .card-action a{
+        padding-left: 60px;
+      }
+      .card-reveal{
+        background-image: url(img/background.png);
+        background-size: cover;
+      }
+      @media screen  and (max-width: 863px){
+        .card-reveal b{
+        font-size: 22px;
+        }
+        .card-reveal p{
+          font-size: 17px;
+        }
+      }
+      @media screen  and (max-width: 1286px){
+        .card-reveal b{
+        font-size: 15px;
+        }
+        .card-reveal p{
+          font-size: 16px;
+        }
+        .card b{
+          font-size: 22px;
+        }
+      }
+      @media screen  and (max-width: 828px){
+        .card-reveal b{
+        font-size: 21px;
+        }
+        .card-reveal p{
+          font-size: 16px;
+        }
+      }
+      @media screen  and (max-width: 715px){
+        .card b{
+        font-size: 20px;
+        }
+        .card p{
+          font-size: 10px;
+        }
+      }
+      @media screen  and (max-width: 730px){
+        .card b{
+        font-size: 20px;
+        }
+        .card p{
+          font-size: 15px;
+        }
+      }
+      @media screen  and (max-width: 670px){
+        .card b{
+        font-size: 17px;
+        }
+        .card p{
+          font-size: 15px;
+        }
+      }
+      @media screen  and (max-width: 600px){
+        .card b{
+        font-size: 21px;
+        }
+        .card p{
+          font-size: 18px;
+        }
+      }
+      .card b{
+        font-family: 'Merienda', cursive;
+      }
+      .container .row .offset-l1 video{
+        border-radius: 50px;
+        border: 10px inset #ff9f1c; 
+      }
+      .container .row .pull-l7{
+        padding-top: 30px;
+      }
+      .carousel{
+        height: 500;
+        perspective: 200px;
+      }
+      .carousel .carousel-item{
+        width: 400px;
+        background: whitesmoke;
+        padding: 25px;
+        height: auto;
+        text-align: center;
+        border-radius: 15px;
+      }
+      .carousel-item .container{
+        padding-left: 30px;
+      }
+      .carousel-item .container i{
+        padding-left: 10px;
+      }
+      .carousel-item .container a{
+        font-size: 17px;
+      }
+      .carousel-item .container .material-icons:hover{
+        text-decoration: none;
+        color: #ff9f1c;
+        text-shadow: 0 0 50px #072ac8;
+      }
+      .modal{
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      }
+      .modal-footer .input-field{
+        padding-left: 50px;
+      }
+      .input-field .btn .white-text{
+        padding-top: 9px;
+      }
+      .input-field .prefix.active{
+        color: #ff9f1c;
+      }
+      .img-area{
+        width: 100px;
+        height: 100px;
+        margin: 0 auto;
+        overflow: hidden;
+        border-radius: 50%;
+        border: inset 8px #ff9f1c;
+      }
+      .img-area img{
+        width: 100%;
+      }
+      .testi p{
+        color: black;
+        font-size: 18px;
+        line-height: 1.9;
+      }
+      .testi h4{
+        font-size: 20px;
+        color: #ff9f1c;
+      }
+      .section .row .offset-l1{
+        padding: 10px 0px;
+      }
+      @media screen and (max-width: 992px){
+        .section .row .offset-l1{
+        padding: 0px;
+        }
+        .row .l7{
+          padding-bottom: 40px;
+        }
+      }
+      .box{
+        text-align: center;
+        padding-top: 60px;
+        padding-bottom: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        height: 500px;
+        background: hsl(0 0% 100% / 0.5);
+      }
+      .box img{
+        width: 200px;
+      }
+      .page-footer{
+        background-color: #ffd166;
+      }
+      .page-footer .container .row{
+        padding: 0px;
+      }
+      .page-footer p{
+        font-family: 'Gochi Hand', cursive;
+      }
+      .page-footer ul{
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+      }
+      .page-footer a i{
+        position: relative;
+        z-index: 10;
+        transition: 0.5s;
+      }
+      .page-footer a::after{
+        content: '';
+        width: 100%;
+        height: 100%;
+        top: -90px;
+        left: 0;
+        background: linear-gradient(96.2deg, rgb(255, 230, 112) 10.4%, rgb(255, 100, 100) 43.8%, rgb(0, 93, 219) 105.8%);
+        position: absolute;
+        transition: 0.5s;
+      }
+      .page-footer a:hover::after{
+        top: 0;
+      }
+      .page-footer a:hover{
+        transform: translateY(-10px);
+      }
+      .page-footer img{
+        height: 120px;
+        padding-bottom: 10px;
+        padding-top: 30px;
+      }
+      .parallax-container, .page-footer{
+        isolation: isolate;
+      }
+      .footer-copyright{
+        background: linear-gradient(109.6deg, rgb(255, 194, 48) 11.2%, rgb(255, 124, 0) 100.2%);
+      }
+      .darkmode--activated .pull-l7 p, .darkmode--activated .pull-l7 b{
+        color: #dad7cd;
+      }
+      .darkmode--activated .sidenav{
+        background-color: rgba(0, 0, 0, .6);
+      }
+      .darkmode--activated .sidenav a{
+        color: white;
+      }
+      .darkmode--activated .box p{
+        color: black;
+      }
+      .darkmode--activated .box{
+        background-color: white;
+      }
+    </style>
+</head>
+<body>
+  <!--Nav Bars-->
+
+  <div class="navbar-fixed scrollspy" id="home">
+    <nav class="nav-wrapper yellow darken-3">
+      <div class="container">
+        <img src="img/logo.png" class="brand-logo" alt="">
+        <a href="#" class="sidenav-trigger" data-target="mobile-links">
+          <i class="material-icons">menu</i>
+        </a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="#home" class="black-text">Home</a></li>
+          <li><a href="#about" class="black-text">About</a></li>
+          <li><a href="#char" class="black-text">Characters</a></li>
+          <li><a href="#reviews" class="black-text">Reviews</a></li>
+          <li><a href="#social" class="black-text">Social</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+    
+
+  <ul class="sidenav center" id="mobile-links">
+    <img src="img/logo.png" alt="" class="responsive-img">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#char">Characters</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#social">Social</a></li>
+    <div class="container center-align">
+      <img src="img/logoweb.png" alt="">
+    </div>
+  </ul>
+
+  <!--Header-->
+
+  <div class="slider">
+    <ul class="slides">
+      <li>
+        <img src="img/encanto.jpg"> 
+        <div class="caption center-align white-text text-lighten-3 black-text-shadow">
+          <h1><b>ENCANTO</b></h1>
+          <h5 class="light white-text text-lighten-3">The Madrigals</h5>
+          <a class="yellow darken-3 white-text waves-effect waves-light btn-large" href="#about">EXPLORE</a>
+        </div>
+      </li>
+      <li>
+        <img src="img/home.jpg"> 
+        <div class="caption center-align">
+          <h1><b>MADRIGAL FAMILY</b></h1>
+          <h5 class="light white-text text-lighten-3">Meet the Madrigal Family</h5>
+          <a class="yellow darken-3 white-text waves-effect waves-light btn-large" href="#about">EXPLORE</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <!--About-->
+
+  <div class="container scrollspy" id="about">
+    <div class="row">
+      <div class="col s12 l6 push-l5 offset-l1">
+        <video class="responsive-video" data-aos="fade-left" data-aos-duration="2000" controls><source src="img/trailer.mp4" type="video/mp4"></video>
+      </div>
+      <div class="col s12 l5 pull-l7 center-align" data-aos="fade-right" data-aos-duration="2000">
+        <ul class="tabs transparent">
+          <li class="tab col s6">
+            <a href="#one" class="black-text"><b>ABOUT</b></a>
+          </li>
+          <li class="tab col s6">
+            <a href="#two" class="black-text"><b>SYNOPSIS</b></a>
+          </li>
+        </ul>
+        <div class="col s12" id="one">
+          <p class="flow-text">Encanto tells the tale of an extraordinary family, the Madrigals, who live hidden in the mountains of Colombia, in a magical house, in a vibrant town, in a wondrous, charmed place called an Encanto.</p>
+        </div>
+        <div class="col s12" id="two">
+          <p class="flow-text">The magic of the Encanto has blessed every child in the family with a unique gift from super strength to the power to heal-every child except one, Mirabel. But when she discovers that the magic surrounding the Encanto is in danger, Mirabel decides that she, the only ordinary Madrigal, might just be her exceptional family's last hope.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Parallax-->
+  <div class="parallax-container" data-aos="zoom-in" data-aos-duration="500">
+    <div class="parallax"><img src="img/header3.jpeg"></div>
+  </div>
+
+  <!--Characters-->
+
+  <div class="container scrollspy" id="char">
+    <div class="row">
+      <div class="col s6 m4 l3">
+        <div class="card" data-aos="zoom-in" data-aos-duration="2000">
+          <div class="card-image" >
+            <img src="img/mirabel.jpg" class="activator">
+          </div>
+          <div class="card-content">
+            <span class="card-title activator indigo-text text-darken-3"><b>MIRABEL</b><i class="material-icons right">more_vert</i></span>
+            <p>Lead</p>
+          </div>
+          <div class="card-reveal ">
+            <span class="card-title white-text center-align"><b>MIRABEL</b><i class="material-icons right white-text ">close</i>
+            </span>
+            <p class="white-text center-align">The main character of Encanto, Mirabel is an extremely bright, bubbly, and energetic young woman. Throughout the movie, Mirabel displays a burning passion for saving the miracle, her family, and their home. She is willing to do almost anything to save the people she loves.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col s6 m4 l3">
+        <div class="card" data-aos="zoom-in" data-aos-duration="2000">
+          <div class="card-image">
+            <img src="img/isabela.jpg" class="activator">
+          </div>
+          <div class="card-content">
+            <span class="card-title activator indigo-text text-darken-3"><b>ISABELA</b><i class="material-icons right">more_vert</i></span>
+            <p>Flora</p>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title white-text center-align"><b>ISABELA</b><i class="material-icons right">close</i>
+            </span>
+            <p class="white-text center-align" id="description">Mirabel’s sister Isabela is pretty much perfect, with an abundance of grace and poise—not to mention a magical ability to make plants grow and flowers bloom.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col s6 m4 l3">
+        <div class="card" data-aos="zoom-in" data-aos-duration="2000">
+          <div class="card-image">
+            <img src="img/dolores.jpg" class="activator">
+          </div>
+          <div class="card-content">
+            <span class="card-title activator indigo-text text-darken-3"><b>DOLORES</b><i class="material-icons right">more_vert</i></span>
+            <p>Hearing</p>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title white-text center-align"><b>DOLORES</b><i class="material-icons right">close</i>
+            </span>
+            <p class="white-text center-align">Dolores is Mirabel’s cousin who’s usually the first to know the town’s biggest secrets, most compelling drama, and juiciest revelations. She can’t help it: she was blessed with extraordinary hearing. Whisper if you will, but Dolores can still hear it!</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col s6 m4 l3">
+        <div class="card" data-aos="zoom-in" data-aos-duration="2000">
+          <div class="card-image">
+            <img src="img/julieta.jpg" class="activator">
+          </div>
+          <div class="card-content">
+            <span class="card-title activator indigo-text text-darken-3"><b>JULIETA</b><i class="material-icons right">more_vert</i></span>
+            <p>Healer</p>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title white-text center-align"><b>JULIETA</b><i class="material-icons right">close</i>
+            </span>
+            <p class="white-text center-align">Julieta is the mother to three daughters: Isabela, Luisa, and Mirabel. Julieta, one of Alma’s triplets, was blessed with the power to heal. Radiating warmth and kindness, she wields no magic wand, however—her magic is found in the food she lovingly prepares for all who need it.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col s6 m4 l3">
+        <div class="card" data-aos="zoom-in" data-aos-duration="2000">
+          <div class="card-image">
+            <img src="img/abuela.jpg" class="activator">
+          </div>
+          <div class="card-content">
+            <span class="card-title activator indigo-text text-darken-3"><b>ABUELA</b><i class="material-icons right">more_vert</i></span>
+            <p>Grandmother</p>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title white-text center-align"><b>ABUELA</b><i class="material-icons right">close</i>
+            </span>
+            <p class="white-text center-align">Abuena is the matriarch of the Madrigal family. Her steadfast determination and unwavering hope led her to the magical Encanto, where she raised triplets Julieta, Pepa, and Bruno. To her surprise and delight, each of her children was blessed with a magical gift upon their 5th birthday, and the tradition continued with each of their children—except for Mirabel. Abuela (which means “grandmother” in Spanish) values the gifts given to each of her family members, ensuring that they are used to benefit and protect their community, and to honor the sacrifice of Abuelo (“grandfather”) Pedro.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col s6 m4 l3">
+        <div class="card" data-aos="zoom-in" data-aos-duration="2000">
+          <div class="card-image">
+            <img src="img/camilo.jpg" class="activator">
+          </div>
+          <div class="card-content">
+            <span class="card-title activator indigo-text text-darken-3"><b>CAMILO</b><i class="material-icons right">more_vert</i></span>
+            <p>Shapeshift</p>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title white-text center-align"><b>CAMILO</b><i class="material-icons right">close</i>
+            </span>
+            <p class="white-text center-align">Camilo, Pepa and Félix’s middle child, was born to entertain. Throw in his magical gift that allows him to switch up his appearance to be whomever he wants to be in the moment, and he’s secured his place in the spotlight.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col s6 m4 l3 push-m2">
+        <div class="card" data-aos="zoom-in" data-aos-duration="2000">
+          <div class="card-image">
+            <img src="img/luisa.jpg" class="activator">
+          </div>
+          <div class="card-content">
+            <span class="card-title activator indigo-text text-darken-3"><b>LUISA</b><i class="material-icons right">more_vert</i></span>
+            <p>Super-strength</p>
+          </div>
+          <div class="card-reveal ">
+            <span class="card-title white-text center-align"><b>LUISA</b><i class="material-icons right">close</i>
+            </span>
+            <p class="white-text center-align">Hardworking and determined, Mirabel’s other sister Luisa was given the gift of super strength. She is the go-to person for all of the heavy lifting.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col s6 m4 l3 push-m2">
+        <div class="card" data-aos="zoom-in" data-aos-duration="2000">
+          <div class="card-image">
+            <img src="img/bru.png" class="activator">
+          </div>
+          <div class="card-content">
+            <span class="card-title activator indigo-text text-darken-3"><b>BRUNO</b><i class="material-icons right">more_vert</i></span>
+            <p>Foresee future</p>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title white-text center-align"><b>BRUNO</b><i class="material-icons right">close</i>
+            </span>
+            <p class="white-text center-align">The third of Alma’s triplets, Bruno has been estranged from the Madrigal family for as long as Mirabel can remember. Gifted with the ability to see the future, he made honest but often doomsaying predictions that proved problematic for Abuela and the rest of the family… so he disappeared, becoming the uncle nobody talks about.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Parallax-->
+  <div class="parallax-container" data-aos="zoom-in" data-aos-duration="2000">
+    <div class="parallax"><img src="img/light.jfif"></div>
+  </div>
+
+  <!--Reviews-->
+  <section class="section container scrollspy" id="reviews">
+    <div class="row">
+      <div class="col s12 m12 l7">
+        <div class="carousel" data-aos="fade-right" data-aos-duration="2000">
+          <div class="carousel-item" href="#">
+            <div class="testi">
+              <div class="img-area">
+                <img src="img/user.jpg">
+              </div>
+            </div>
+            <h4><b>DAHLIA</b></h4>
+            <i class="material-icons prefix yellow-text text-darken-3">star</i>
+            <i class="material-icons prefix yellow-text text-darken-3">star</i>
+            <i class="material-icons prefix yellow-text text-darken-3">star</i>
+            <i class="material-icons prefix yellow-text text-darken-3">star</i>
+            <i class="material-icons prefix yellow-text text-darken-3">star</i>
+            <p>I interpreted "Encanto" to mean that one's strength is not determined by traditions or other people's understanding of strength. Strength is about knowing the ethical thing to do, even if it challenges tradition.</p>
+            <div class="container">
+              <i class="material-icons prefix left">thumb_up</i>
+              <i class="material-icons prefix left">thumb_down</i>
+              <a class="yellow-text text-darken-3 modal-trigger" href="#report">Report</a>
+            </div>
+          </div>
+          <div class="carousel-item" href="#">
+            <div class="testi">
+              <div class="img-area">
+                <img src="img/user2.png">
+              </div>
+            </div>
+            <h4><b>RAIN</b></h4>
+            <i class="material-icons prefix yellow-text text-darken-3">star</i>
+            <i class="material-icons prefix yellow-text text-darken-3">star</i>
+            <i class="material-icons prefix yellow-text text-darken-3">star</i>
+            <i class="material-icons prefix yellow-text text-darken-3">star_half</i>
+            <i class="material-icons prefix yellow-text text-darken-3">star_border</i>
+            <p>Encanto is a cute family film. That delivers a family theme story. Beautiful and colorful animation with a talented voice cast. The musical sequences are good but not as outstanding and memorable like most Disney films.</p>
+            <div class="container">
+              <i class="material-icons prefix left">thumb_up</i>
+              <i class="material-icons prefix left">thumb_down</i>
+              <a class="yellow-text text-darken-3 modal-trigger" href="#report">Report</a>
+            </div>
+          </div>
+          <div class="carousel-item" href="#">
+            <div class="testi">
+              <div class="img-area">
+                <img src="img/user3.jpg">
+              </div>
+            </div>
+            <h4><b>ATHENA</b></h4>
+            <i class="material-icons prefix yellow-text text-darken-3">star</i>
+            <i class="material-icons prefix yellow-text text-darken-3">star</i>
+            <i class="material-icons prefix yellow-text text-darken-3">star</i>
+            <i class="material-icons prefix yellow-text text-darken-3">star</i>
+            <i class="material-icons prefix yellow-text text-darken-3">star</i>
+            <p>The animation is gorgeous. No surprise there. And the music really sticks in your head Not to mention how many of the songs strive to dig out a characters insecurities and personality. This film is seriously so good.</p>
+            <div class="container">
+              <i class="material-icons prefix left">thumb_up</i>
+              <i class="material-icons prefix left">thumb_down</i>
+              <a class="yellow-text text-darken-3 modal-trigger" href="#report">Report</a>
+            </div>
+          </div>
+          <div class="carousel-item" href="#">
+            <div class="testi">
+              <div class="img-area">
+                <img src="img/user4.png">
+              </div>
+            </div>
+            <h4><b>ISHIRO</b></h4>
+            <i class="material-icons prefix yellow-text text-darken-3">star</i>
+            <i class="material-icons prefix yellow-text text-darken-3">star</i>
+            <i class="material-icons prefix yellow-text text-darken-3">star</i>
+            <i class="material-icons prefix yellow-text text-darken-3">star</i>
+            <i class="material-icons prefix yellow-text text-darken-3">star</i>
+            <p>Encanto is an amazing film full of teachings that brings big surprises and great emotions to the public. You will be thrilled with the many beauties and magic in this film.</p>
+            <div class="container">
+              <i class="material-icons prefix left">thumb_up</i>
+              <i class="material-icons prefix left">thumb_down</i>
+              <a class="yellow-text text-darken-3 modal-trigger" href="#report">Report</a>
+            </div>
+          </div>
+          <div class="carousel-item" href="#">
+            <div class="testi">
+              <div class="img-area">
+                <img src="img/user5.png">
+              </div>
+            </div>
+            <h4><b>MIKKI</b></h4>
+            <i class="material-icons prefix yellow-text text-darken-3">star</i>
+            <i class="material-icons prefix yellow-text text-darken-3">star</i>
+            <i class="material-icons prefix yellow-text text-darken-3">star</i>
+            <i class="material-icons prefix yellow-text text-darken-3">star</i>
+            <i class="material-icons prefix yellow-text text-darken-3">star_border</i>
+            <p>Encanto is another Incredible Disney animated movie that continues their winning streak with a fun, extremely vibrant and emotional film that also has great messages and mature themes, even if the narrative is predictable.</p>
+            <div class="container">
+              <i class="material-icons prefix left">thumb_up</i>
+              <i class="material-icons prefix left">thumb_down</i>
+              <a class="yellow-text text-darken-3 modal-trigger" href="#report">Report</a>
+            </div>
+          </div>
+        </div>
+        <div class="modal" id="report">
+          <div class="modal-content">
+            <h5 class="yellow-text text-darken-3"><b>What's the problem?</b></h5>
+            <div class="input-field">
+              <p>
+                <label>
+                  <input type="checkbox">
+                  <span class="black-text">It's rude, vulgar or uses bad language</span>
+                </label>
+              </p>
+            </div>
+            <div class="input-field">
+              <p>
+                <label class="black-text">
+                  <input type="checkbox">
+                  <span>It's sexually explicit</span>
+                </label>
+              </p>
+            </div>
+            <div class="input-field">
+              <p>
+                <label>
+                  <input type="checkbox">
+                  <span class="black-text">It's harassment or hate speech</span>
+                </label>
+              </p>
+            </div>
+            <div class="input-field">
+              <p>
+                <label>
+                  <input type="checkbox">
+                  <span class="black-text">It's threatening, violent or suicidal</span>
+                </label>
+              </p>
+            </div>
+            <div class="input-field">
+              <p>
+                <label>
+                  <input type="checkbox">
+                  <span class="black-text">Something else</span>
+                  <textarea id="reviews" class="materialize-textarea"></textarea>
+                </label>
+              </p>
+            </div>
+            <div class="modal-footer transparent">
+              <div class="input-field">
+                <a class="btn white black-text waves-effect modal-close">
+                  <span>BACK</span>
+                </a>
+                <a href="#confirm" class="btn yellow darken-3 waves-effect modal-trigger">
+                  <span>REPORT</span>
+                </a>
+              </div>
+            </div>
+            <div class="modal" id="confirm">
+              <div class="modal-content">
+                <h5 class="yellow-text text-darken-3"><b>Confirm Report</b></h5>
+                <p>We take reports very seriously. Before sending your report, please make sure that it goes against our community standards.</p>
+                <div class="modal-footer transparent">
+                  <div class="input-field">
+                    <a class="btn white black-text waves-effect modal-close">
+                      <span>CANCEL</span>
+                    </a>
+                    <a class="btn yellow darken-3 waves-effect modal-close">
+                      <span>CONFIRM</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col s12 m12 l4 offset-l1" data-aos="fade-left" data-aos-duration="2000">
+        <div class="box">
+          <img src="img/logo.png" alt="">
+          <p>Submit your thoughts and reviews on this movie in the form below!</p>
+          <form action="">
+            <div class="input-field">
+              <i class="material-icons prefix">person</i>
+              <input type="text" id="name" required>
+              <label for="name">Input your name</label>
+            </div>
+            <div class="input-field">
+              <i class="material-icons prefix">email</i>
+              <input type="email" id="email" required>
+              <label for="email">Input your email</label>
+            </div>
+            <div class="input-field">
+              <i class="material-icons prefix">message</i>
+              <textarea id="review" class="materialize-textarea" required></textarea>
+              <label for="review">Write your reviews</label>
+            </div>
+            <div class="input-field center">
+              <a href="#reviews" class="btn yellow darken-3 waves-effect">
+                <input type="submit" value="submit" class="white-text">
+                <i class="material-icons left">send</i>
+              </a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!--Footer-->
+  <footer class="page-footer black-text scrollspy" id="social">
+    <div class="container center-align">
+      <div class="row">
+        <div class="center" data-aos="fade-right" data-aos-duration="2000">
+          <img class="center-align" src="img/smalllogo1.png" alt="logo">
+        </div>
+        <div class="col s12 m12 l12 center-align" data-aos="fade-left" data-aos-duration="2000">
+          <p>"The miracle is not some magic that you've got – the miracle is you."</p>
+        </div>
+        <div class="col s12 m12 l12 center-align" data-aos="fade-right" data-aos-duration="2000">
+          <nav class="nav-wrapper transparent z-depth-0">
+            <ul>
+              <li>
+                <a href="https://www.facebook.com/EncantoMovie/" target="_blank" class="btn-floating brown darken-4"><i class="fa-brands fa-facebook-f"></i></a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/encantomovie/" target="_blank" class="btn-floating brown darken-4"><i class="fab fa-instagram"></i></a>
+              </li>
+              <li>
+                <a href="https://twitter.com/EncantoMovie" target="_blank" class="btn-floating brown darken-4"><i class="fab fa-twitter"></i></a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/watch?v=CaimKeDcudo" target="_blank" class="btn-floating brown darken-4"><i class="fab fa-youtube"></i></a>
+              </li>
+            </ul>
+          </nav>
+          <span><b>GET IN TOUCH</b></span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright black-text">
+      <div class="container center-align">
+        <div class="container center-align"><b>&copy; 2022 All Rights Reserved</b></div>
+      </div>
+    </div>
+  </footer>
+    
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="encanto.min.js"></script>
+
+  <script>
+    $(document).ready(function(){
+      $('.sidenav').sidenav();
+      $('.slider').slider({
+        fullWidth: true,
+        indicators: false,
+        height: 700
+      });
+      $('.materialboxed').materialbox();
+      $('.modal').modal();
+      $('.parallax').parallax();
+      $('.tabs').tabs();
+      $('.carousel').carousel({
+        padding: 10
+      });
+      $('.modal').modal();
+      $('.scrollspy').scrollSpy();
+      AOS.init();
+    })
+
+    const options = {
+      bottom: '32px',
+      right: '32px',
+      left: 'unset', 
+      time: '0.3s', 
+      mixColor: '#fff', 
+      backgroundColor: '#dad7cd',  
+      buttonColorDark: '#100f2c',  
+      buttonColorLight: '#dad7cd', 
+      saveInCookies: true, 
+      label: '🌓', 
+      autoMatchOsTheme: true
+    }
+
+    const darkmode = new Darkmode(options);
+    darkmode.showWidget();
+  </script>
+
+</body>
+</html>
